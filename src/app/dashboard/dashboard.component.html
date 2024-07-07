@@ -1,0 +1,27 @@
+<div *ngFor="let user of userData">
+  <h2>User ID: {{ user.id }}</h2>
+  <p><strong>Password:</strong> {{ user.password }}</p>
+
+  <h3>Banking Information</h3>
+  <ul *ngFor="let bank of user.banking">
+    <li><strong>Bank Account Number:</strong> {{ bank.bankAccountNumber }}</li>
+    <li><strong>Bank Name:</strong> {{ bank.bankName }}</li>
+    <li><strong>Account Holder Name:</strong> {{ bank.accountHolderName }}</li>
+  </ul>
+
+  <h3>Address Information</h3>
+  <ul *ngFor="let addr of user.address">
+    <li><strong>Address:</strong> {{ addr.address }}</li>
+    <li><strong>City:</strong> {{ addr.city }}</li>
+    <li><strong>State:</strong> {{ addr.state }}</li>
+    <li><strong>Country:</strong> {{ addr.country }}</li>
+    <li><strong>Email:</strong> {{ addr.email }}</li>
+    <li><strong>Pin Code:</strong> {{ addr.pinCode }}</li>
+  </ul>
+
+  <hr>
+</div>
+
+<div *ngIf="userData.length === 0">
+  <p>Loading user data...</p>
+</div>
